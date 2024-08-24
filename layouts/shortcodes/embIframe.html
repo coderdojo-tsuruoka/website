@@ -1,0 +1,5 @@
+<!-- embIframe -->
+<iframe src="{{ .Get "src" | safeURL }}"
+{{ if .Get "width" }} width="{{ .Get "width" }}"{{ end }}
+{{ if .Get "height" }} height="{{ .Get "height" }}"{{ end }}>
+</iframe>

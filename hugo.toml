@@ -1,0 +1,286 @@
+######## GENERAL
+baseURL = 'https://www.coderdojo-tsuruoka.com'
+title = "CoderDojo Tsuruoka"
+theme = "hugo-universal-theme"
+
+languageCode = "ja-jp"
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "ja"
+
+# Enable comments by entering your Disqus shortname
+#disqusShortname = "devcows"
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+
+# number of words of summarized post content (default 70)
+summaryLength = 70
+
+# Define the number of posts per page
+paginate = 10
+
+# not pluralize title pages by default
+pluralizelisttitles = false
+
+
+######## MENU
+[menu]
+
+# Main menu
+[[menu.main]]
+    name       = "Home"
+    identifier = "menu.home"
+    url        = "/"
+    weight     = 1
+
+[[menu.main]]
+    name       = "活動について"
+    identifier = "menu.coderdojo"
+    weight     = 2
+
+[[menu.main]]
+    name       = "定期開催の道場"
+    identifier = "section.regulardojo"
+    url        = ""
+    weight     = 1
+    parent     = "menu.coderdojo"
+    post       = 1
+
+[[menu.main]]
+    name       = "無料のプログラミング道場(月1回開催)"
+    url        = "/coderdojo"
+    weight     = 1
+    parent     = "section.regulardojo"
+
+[[menu.main]]
+    name       = "よくある質問"
+    url        = "/coderdojo/faq"
+    weight     = 2
+    parent     = "section.regulardojo"
+
+[[menu.main]]
+    name       = "参加者限定ページ"
+    url        = "/coderdojo/secret"
+    weight     = 3
+    parent     = "section.regulardojo"
+
+
+#[[menu.main]]
+#    name       = "Blog"
+#    identifier = "menu.blog"
+#    url        = "/blog/"
+#    weight     = 4
+
+[[menu.main]]
+    name       = "当団体について"
+    identifier = "menu.aboutus"
+    weight     = 90
+
+[[menu.main]]
+    name       = "CoderDojo Tsuruokaについて"
+    url        = "/about"
+    weight     = 1
+    parent     = "menu.aboutus"
+
+[[menu.main]]
+    name       = "会員規約"
+    url        = "/agreement"
+    weight     = 1
+    parent     = "menu.aboutus"
+
+[[menu.main]]
+    name       = "よくある質問"
+    identifier = "menu.faq"
+    url        = "/faq/"
+    weight     = 60
+
+[[menu.main]]
+    name       = "お問い合わせ"
+    identifier = "contact"
+    url        = "/contact/"
+    weight     = 100
+
+
+######## SOCIAL LINKS on TOP BAR
+[[menu.topbar]]
+    weight = 1
+    name = "Facebook"
+    url = "https://www.facebook.com/coderdojo.tsuruoka"
+    pre = "<i class='fab fa-2x fa-facebook'></i>"
+
+[[menu.topbar]]
+    weight = 2
+    name = "Instagram"
+    url = "http://instagram.com/coderdojo_tsuruoka"
+    pre = "<i class='fab fa-2x fa-instagram'></i>"
+
+[[menu.topbar]]
+    weight = 5
+    name = "Email"
+    url = "mailto:tsuruoka.jp@coderdojo.com"
+    pre = "<i class='fas fa-2x fa-envelope'></i>"
+
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            hardWraps = true
+            unsafe = true
+    [markup.tableOfContents]
+        endLevel = 5
+        startLevel = 3
+
+
+######## PARAMS
+[params]
+    author = "CoderDojo Tsuruoka"
+    defaultKeywords = ["CoderDojo", "CoderDojo Tsuruoka", "コーダー道場", "コーダー道場 鶴岡", "鶴岡", "庄内", "山形"]
+    defaultDescription = "CoderDojo Tsuruokaは、山形県鶴岡市を中心に地域ボランティアメンバーによって運営する非営利のプログラミングクラブです。月1回程度、無償でプログラミング道場を提供しています。"
+#    viewMorePostLink = "/blog/"
+#    mainSections = ["blog"]
+
+    about_us = "<p>CoderDojo Tsuruokaは、無償でプログラミング道場を提供している、地域ボランティアメンバーによって運営する非営利のプログラミングクラブです。</p>"
+
+    disabled_logo = false
+    logo_text = "CoderDojo Tsuruoka"
+    logo = "/img/logo.png"
+    logo_small = "/img/logo.png"
+
+    copyright = "Copyright (c) 2024, CoderDojo Tsuruoka. All rights reserved."
+
+
+    # Social media
+    facebook_site = "coderdojo.tsuruoka" # the Facebook handle of your site ('https://www.facebook.com/HANDLE')
+#    twitter_site = "GoHugoIO" # the Twitter handle of your site (without the '@')
+    default_sharing_image = "img/sharing-default.png"
+
+    # Google Maps widget: If `googleMapsApiKey` is not set, no key will be passed to Google (which likely results in a broken map widget).
+    enableGoogleMaps = false
+#    googleMapsApiKey = "AIzaSyAv7Sza8NSp9_l_g8G2vlo0H4ydEPn_2jY"
+#    latitude = "-12.043333"
+#    longitude = "-77.028333"
+
+    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
+    style = "violet"
+
+    # Since this template is static, the contact form uses www.formspree.io as a
+    # proxy. The form makes a POST request to their servers to send the actual
+    # email. Visitors can send up to a 50 emails each month for free.
+    #
+    # What you need to do for the setup?
+    #
+    # - register your account to https://formspree.io/register
+    # - login and create new form
+    # - set your form's endpoint url under 'formspree_action' below
+    # - upload the generated site to your server
+    # - test a dummy email yourself
+    # - you're done. Happy mailing!
+    #
+    # Enable the contact form by entering your Formspree.io endpoint url
+    formspree_action = "https://formspree.io/sample/of/endpoint"
+    contact_form_ajax = false
+
+    # Formspree form supports Google reCAPTCHA Key (type v2).
+    # If you use this feature, you should enable reCAPTCHA feature in the Formspree dashboard.
+    #
+    # By default, Formspree use a redirect page for recaptcha widget.
+    # If you use a recaptcha widget in your contact page, you should do next steps.
+    # (if you don't want, skip these steps)
+    #
+    #   1. register your site on Google recaptcha admin page: https://www.google.com/recaptcha/admin
+    #   2. select reCAPTCHA v2 and checkbox widget type.
+    #   3. remember site key and secret key.
+    #   4. enter secret key into "Custom reCAPTCHA Key" field in your Formspree form setting page.
+    #   5. change `enableRecaptchaInContactForm` is to true
+    #   6. enter site key into `googleRecaptchaKey` to enable a recaptcha widget in your page.
+    #
+    enableRecaptchaInContactForm = false
+    googleRecaptchaKey = "site_key_for_google_recaptcha"
+
+    # Format dates with Go's time formatting
+    date_format = "January 2, 2006"
+
+    dropdown_mouse_over = false
+
+    contact_url = "/contact"
+    address = ""
+
+# Enable or disable top bar with social icons
+[params.topbar]
+    enable = true
+#    text = """<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
+#      <p class="hidden-md hidden-lg"><a href="tel:+420 777 555 333" data-animate-hover="pulse"><i class="fas fa-phone"></i></a>
+#      <a href="mailto:hello@universal.com" data-animate-hover="pulse"><i class="fas fa-envelope"></i></a>
+#      </p>
+#      """
+
+#[permalinks]
+#    blog = "/blog/:year/:month/:day/:filename/"
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    categories = true
+    tags = true
+    search = false
+
+[params.carouselCustomers]
+    items = 6
+    auto_play = false
+    slide_speed = 2000
+    pagination_speed = 1000
+
+[params.carouselTestimonials]
+    items = 4
+    auto_play = false
+    slide_speed = 2000
+    pagination_speed = 1000
+
+[params.carouselHomepage]
+    # All carousel items are defined in their own files. You can find items at '/data/carousel'.
+    enable = true
+    auto_play = true
+    slide_speed = 2000
+    pagination_speed = 1000
+
+[params.features]
+    # All features are defined in their own files. You can find items at '/data/features'.
+    enable = true
+    cols = 3 # Default: 3, Available values 2,3,4,6
+
+[params.testimonials]
+    enable = true
+    # All testimonials are defined in their own files. You can find items at '/data/testimonials'.
+    title = "Testimonials"
+    subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
+
+[params.see_more]
+    enable = true
+    icon = "far fa-file-alt"
+    title = "Do you want to see more?"
+    subtitle = "We have prepared for you more than 40 different HTML pages, including 5 variations of homepage."
+    link_url = "#"
+    link_text = "Check other homepages"
+
+[params.clients]
+    enable = true
+#    enable = false
+    # All clients are defined in their own files. You can find example items
+    # at 'exampleSite/data/clients'.
+    # For more information take a look at the README.
+    title = "ご支援いただいている企業・団体"
+    subtitle = ""
+
+[params.recent_posts]
+#    enable = true
+    enable = false
+#    title = "From our blog"
+#    subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+#    hide_summary = false
+
+[params.footer.recent_posts]
+#    enable = true
+    enable = false
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  author = "authors"
