@@ -88,7 +88,7 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           key: ${{ secrets.SERVER_KEY }}
           source: "./${{ needs.info.outputs.version_id }}"
-          target: "sources/${{ needs.info.outputs.version_id }}"
+          target: "sources/"
       - name: Create releaase tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
