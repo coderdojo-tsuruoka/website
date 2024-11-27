@@ -30,6 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       version_id: ${{ steps.vid.outputs.version_id }}
+    env:
+      TZ: "Asia/Tokyo"
     steps:
       - name: Set version_id
         id: vid
@@ -87,13 +89,11 @@ jobs:
       - name: Create releaase tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_TAG: stage/${{ needs.info.outputs.version_id }}
-        uses: release-drafter/release-drafter@v5
-        with:
-          tag: ${{ env.RELEASE_TAG }}
-          name: Release for staging ${{ env.RELEASE_TAG }}
-          version: ${{ env.RELEASE_TAG }}
-          publish: true
+          RELEASE_TAG: staging/${{ needs.info.outputs.version_id }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git tag ${{ env.RELEASE_TAG }}
+          git push origin ${{ env.RELEASE_TAG }}
 
   # Deployment job for staging
   staging_deploy:
