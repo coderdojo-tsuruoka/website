@@ -29,9 +29,10 @@ jobs:
   info:
     runs-on: ubuntu-latest
     outputs:
-      version_id: ${{ steps.set_outputs.outputs.version_id }}
+      version_id: ${{ steps.vid.outputs.version_id }}
     steps:
       - name: Set version_id
+        id: vid
         run: |
           version_id=$(date "+%Y%m%d%H%M%S")
           echo "version_id=$version_id"
@@ -71,6 +72,9 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Echo version id
+        run: |
+          echo ${{ needs.info.outputs.version_id }}
       - name: Upload files via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
