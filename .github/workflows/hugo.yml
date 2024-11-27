@@ -102,7 +102,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SERVER_KEY }}
-          known_hosts: ${{ secret.KNOWN_HOSTS }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
       - name: Deploy staging site
         run: ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} './deploy_stage.sh ${{ needs.info.outputs.version_id }}'
