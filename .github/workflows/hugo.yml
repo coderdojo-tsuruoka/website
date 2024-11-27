@@ -55,6 +55,8 @@ jobs:
     needs: info
     env:
       HUGO_VERSION: 0.138.0
+    permissions:
+      contents: write
     steps:
       - name: Install Hugo CLI
         run: |
