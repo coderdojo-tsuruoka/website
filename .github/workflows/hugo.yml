@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref_name == 'staging'
     environment: staging
-    needs: info, build
+    needs: [info, build]
     steps:
       - name: Deploy staging site
         run: |
