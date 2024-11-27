@@ -1,0 +1,12 @@
+weight: 10
+title: <span style="font-size:37.5px">塾や教室とは違い<br />本人のやりたいを重視</span>
+description: >
+  <ul class="list-style-none">
+    <li>塾やパソコン教室のようにカリキュラムはなく</li>
+    <li>1から教えるといった進め方は行いません</li>
+    <li>本人がやりたいことを決め</li>
+    <li>Dojoは伴走する形でサポートします</li>
+    <li>(※特別ワークショップを除く)</li>
+  </ul>
+image: "img/carousel/10_dojo_style.png"
+href: "coderdojo/faq"

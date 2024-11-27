@@ -27,7 +27,7 @@ pluralizelisttitles = false
 
 # Main menu
 [[menu.main]]
-    name       = "Home"
+    name       = "ホーム"
     identifier = "menu.home"
     url        = "/"
     weight     = 1
@@ -101,6 +101,7 @@ pluralizelisttitles = false
 
 
 ######## SOCIAL LINKS on TOP BAR
+######## ページ右上のソーシャルメディアリンク - weightが小さいものから大きいものの順に並ぶ
 [[menu.topbar]]
     weight = 1
     name = "Facebook"
@@ -249,16 +250,16 @@ pluralizelisttitles = false
 [params.testimonials]
     enable = true
     # All testimonials are defined in their own files. You can find items at '/data/testimonials'.
-    title = "Testimonials"
-    subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
+    title = "参加者の声"
+    subtitle = "CoderDojo Tsuruokaのイベントに参加された方からお寄せいただいた声をご紹介します。"
 
 [params.see_more]
     enable = true
     icon = "far fa-file-alt"
-    title = "Do you want to see more?"
-    subtitle = "We have prepared for you more than 40 different HTML pages, including 5 variations of homepage."
-    link_url = "#"
-    link_text = "Check other homepages"
+    title = "CoderDojo Tsuruokaの情報を知りたい方へ"
+    subtitle = "イベントの開催レポートや案内、おしらせはFacebookページから都度発信しています。<br />実際の活動の様子を知りたい方はこちらの情報も合わせてご確認ください。"
+    link_url = "https://www.facebook.com/coderdojo_tsuruoka"
+    link_text = "Facebookページを見る"
 
 [params.clients]
     enable = true
