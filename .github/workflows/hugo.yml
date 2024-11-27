@@ -86,7 +86,7 @@ jobs:
           echo "Deploy staging site"
 
   # Deployment job for production
-  staging_deploy:
+  production_deploy:
     runs-on: ubuntu-latest
     if: github.ref_name == 'main'
     environment: production
