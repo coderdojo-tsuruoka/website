@@ -1,0 +1,11 @@
+weight: 1
+title: <span style="font-size:37.5px">無料プログラミング道場<br />毎月開催！</span>
+description: >
+  <ul class="list-style-none">
+    <li>小学1年生から高校3年生向けに</li>
+    <li>無料で参加できるプログラミングクラブを開催</li>
+    <li>プログラミングやパソコンを使った創作など</li>
+    <li>情報技術を使った"やりたい！"をサポートします</li>
+  </ul>
+image: "img/carousel/01_monthly_dojo.png"
+href: "coderdojo"
