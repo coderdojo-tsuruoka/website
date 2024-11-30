@@ -1,0 +1,84 @@
+# Workflow for building and deploying a Hugo site
+name: Deploy website
+
+on:
+  # Runs on pushes targeting the default branch
+  pull_request:
+    branches:
+      - master
+    types:
+      - merged
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+## Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+## However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: prod-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    outputs:
+      version_id: ${{ steps.vid.outputs.version_id }}
+    steps:
+      - name: Set version_id
+        id: vid
+        run: |
+          version_id=`echo ${{ github.event.pull_request.title }} | awk '{print $2}'`
+          echo "version_id=$version_id"
+          echo "version_id=$version_id" >> $GITHUB_OUTPUT
+      - name: Echo settings
+        run: |
+          echo "github.workflow: ${{ github.workflow }}"
+          echo "github.ref: ${{ github.ref }}"
+          echo "github.ref_name: ${{ github.ref_name }}"
+          echo "github.base_ref: ${{ github.base_ref }}"
+          echo "github.head_ref: ${{ github.head_ref }}"
+
+  # Deployment job for production
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    needs: info
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SERVER_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: fail
+      - name: Deploy production site
+        run: ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} './deploy_prod.sh ${{ needs.info.outputs.version_id }}'
+
+  # Create release tag
+  build:
+    runs-on: ubuntu-latest
+    environment: production
+    needs: [info, deploy]
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Create releaase tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STAGING_TAG: staging/${{ needs.info.outputs.version_id }}
+          RELEASE_TAG: release/${{ needs.info.outputs.version_id }}
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git tag ${{ env.RELEASE_TAG }} ${{ env.STAGING_TAG }}
+          git push origin ${{ env.RELEASE_TAG }}
+

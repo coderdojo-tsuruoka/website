@@ -1,15 +1,11 @@
 # Workflow for building and deploying a Hugo site
-name: Deploy website
+name: Deploy staging website
 
 on:
   # Runs on pushes targeting the default branch
   push:
     branches: 
       - staging
-#      - main
-#  pull_request:
-#    types:
-#      - closed
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -50,7 +46,6 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    if: github.ref_name == 'staging'
     environment: staging
     needs: info
     env:
@@ -100,9 +95,8 @@ jobs:
           git push origin ${{ env.RELEASE_TAG }}
 
   # Deployment job for staging
-  staging_deploy:
+  deploy:
     runs-on: ubuntu-latest
-    if: github.ref_name == 'staging'
     environment: staging
     needs: [info, build]
     steps:
@@ -115,14 +109,32 @@ jobs:
       - name: Deploy staging site
         run: ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} './deploy_stage.sh ${{ needs.info.outputs.version_id }}'
 
-
-  # Deployment job for production
-  production_deploy:
+  # Create PR for production release
+  create_pr:
     runs-on: ubuntu-latest
-    if: github.ref_name == 'main'
-    environment: production
-    needs: info
+    environment: staging
+    needs: [info, build, deploy]
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
-      - name: Deploy production site
+      - name: Get a pull request head ref
+        id: pull_request_head
         run: |
-          echo "Deploy production site"
+          case "${{ github.event_name }}" in
+            "pull_request") echo "ref=${{ github.event.pull_request.head.ref }}" >> GITHUB_OUTPUT ;;
+            "push") echo "ref=${{ github.ref_name }}" >> $GITHUB_OUTPUT ;;
+            *) exit 1 ;;
+          esac
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          ref: ${{ steps.pull_request_head.outputs.ref }}
+      - name: Create PR for production deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          gh pr create -B main -t "[本番リリース] ${{ needs.info.outputs.version_id }}" -b "本番環境へのリリース - ${{ needs.info.outputs.version_id }}"
