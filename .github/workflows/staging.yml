@@ -114,6 +114,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: staging
     needs: [info, build, deploy]
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
