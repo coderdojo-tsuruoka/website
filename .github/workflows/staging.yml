@@ -115,6 +115,7 @@ jobs:
     environment: staging
     needs: [info, build, deploy]
     permissions:
+      contents: write
       pull-requests: write
     steps:
       - name: Checkout
@@ -122,7 +123,12 @@ jobs:
         with:
           submodules: recursive
       - name: Create PR for production deploy
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh pr create -B main -H stage -t "[本番リリース] ${{ needs.info.outputs.version_id }}" -b "本番環境へのリリース - ${{ needs.info.outputs.version_id }}"
+        uses: peter-evans/create-pull-request@v7
+        with:
+          title: '[本番リリース] ${{ needs.info.outputs.version_id }}'
+          body: |
+            本番環境へのリリース - ${{ needs.info.outputs.version_id }}
+#        run: |
+#          git config --local user.name "github-actions[bot]"
+#          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+#          gh pr create -B main -H stage -t "[本番リリース] ${{ needs.info.outputs.version_id }}" -b "本番環境へのリリース - ${{ needs.info.outputs.version_id }}"
