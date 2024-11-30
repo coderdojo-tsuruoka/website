@@ -140,4 +140,4 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          gh pr create -a "yosi-q" -r "yosi-q" -B main -t ${{ env.PR_TITLE }} -b ${{ env.PR_BODY }} -l ${{ env.PR_LABEL}}
+          gh pr create -a "yosi-q" --reviewer "yosi-q" -B main -t ${{ env.PR_TITLE }} -b ${{ env.PR_BODY }} -l ${{ env.PR_LABEL}}
