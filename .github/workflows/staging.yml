@@ -115,7 +115,7 @@ jobs:
     environment: staging
     needs: [info, build, deploy]
     permissions:
-      contents: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
