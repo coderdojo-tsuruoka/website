@@ -119,6 +119,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          pr_title=[本番リリース] ${{ needs.info.outputs.version_id }}
-          echo "pr_title: $pr_title"
-          gh pr create -B main -H stage -t $pr_title -b "本番環境へのリリース - ${{ needs.info.outputs.version_id }}"
+          gh pr create -B main -H stage -t "[本番リリース] ${{ needs.info.outputs.version_id }}" -b "本番環境へのリリース - ${{ needs.info.outputs.version_id }}"
