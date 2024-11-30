@@ -115,7 +115,11 @@ jobs:
     environment: staging
     needs: [info, build, deploy]
     steps:
-      - name: create
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Create PR for production deploy
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
