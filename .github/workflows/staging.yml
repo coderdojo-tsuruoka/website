@@ -134,7 +134,10 @@ jobs:
       - name: Create PR for production deploy
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_TITLE: "[本番リリース] ${{ needs.info.outputs.version_id }}"
+          PR_BODY: "本番環境へのリリース - ${{ needs.info.outputs.version_id }}"
+          PR_LABEL: "auto generated"
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          gh pr create -B main -t "[本番リリース] ${{ needs.info.outputs.version_id }}" -b "本番環境へのリリース - ${{ needs.info.outputs.version_id }}"
+          gh pr create -a "yosi-q" -r "yosi-q" -B main -t ${{ env.PR_TITLE }} -b ${{ env.PR_BODY }} -l ${{ env.PR_LABEL}}
