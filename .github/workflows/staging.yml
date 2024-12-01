@@ -22,12 +22,37 @@ defaults:
     shell: bash
 
 jobs:
+  check_diff:
+    runs-on: ubuntu-latest
+    outputs:
+      diff_exists: ${{ steps.check_diff.outputs.diff_exists }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Changes available
+        id: check_diff
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch origin master
+
+          if ! git diff --quiet origin/master..HEAD; then
+            echo "diff_exists=true" >> $GITHUB_ENV
+          else
+            echo "diff_exists=false" >> $GITHUB_OUTPUT
+          fi
+
   info:
     runs-on: ubuntu-latest
     outputs:
       version_id: ${{ steps.vid.outputs.version_id }}
+    needs: check_diff
     env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       TZ: "Asia/Tokyo"
+    if: ${{ needs.check_diff.outputs.diff_exists}} == 'true'
     steps:
       - name: Set version_id
         id: vid
