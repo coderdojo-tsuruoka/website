@@ -60,7 +60,7 @@ jobs:
         run: ssh -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} './deploy_prod.sh ${{ needs.info.outputs.version_id }}'
 
   # Create release tag
-  build:
+  createtag:
     runs-on: ubuntu-latest
     environment: production
     needs: [info, deploy]
@@ -77,6 +77,7 @@ jobs:
           STAGING_TAG: staging/${{ needs.info.outputs.version_id }}
           RELEASE_TAG: release/${{ needs.info.outputs.version_id }}
         run: |
+          git fetch --prune --unshallow --tags
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git tag ${{ env.RELEASE_TAG }} ${{ env.STAGING_TAG }}
