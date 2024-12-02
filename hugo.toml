@@ -7,11 +7,6 @@ languageCode = "ja-jp"
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "ja"
 
-# Enable comments by entering your Disqus shortname
-#disqusShortname = "devcows"
-# Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
-
 # number of words of summarized post content (default 70)
 summaryLength = 70
 
@@ -20,6 +15,15 @@ paginate = 10
 
 # not pluralize title pages by default
 pluralizelisttitles = false
+
+[services]
+# Enable comments by entering your Disqus shortname
+#[services.disqus]
+#Shortname = "devcows"
+# Enable Google Analytics by entering your tracking code
+[services.googleAnalytics]
+#id = "UA-XXXXX-X"
+id = ""
 
 
 ######## MENU
