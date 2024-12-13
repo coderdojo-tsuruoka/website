@@ -24,18 +24,6 @@ defaults:
     shell: bash
 
 jobs:
-  app_install:
-    runs-on: ubuntu-latest
-    outputs:
-      private_key: ${{ steps.generate-token.outputs.token }}
-    steps:
-      - name: Generate a GitHub App install access token
-        id: generate-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ vars.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
-    
   info:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
@@ -75,14 +63,20 @@ jobs:
   createtag:
     runs-on: ubuntu-latest
     environment: production
-    needs: [info, deploy, app_install]
+    needs: [info, deploy]
     permissions:
       contents: write
     steps:
+      - name: Generate a GitHub App install access token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ needs.app_install.outputs.private_key }}
+          token: ${{ steps.generate-token.outputs.token }}
           submodules: recursive
       - name: Create releaase tag
         env:
