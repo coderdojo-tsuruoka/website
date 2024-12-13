@@ -22,10 +22,10 @@ defaults:
     shell: bash
 
 jobs:
-  app_install:
+  check_diff:
     runs-on: ubuntu-latest
     outputs:
-      private_key: ${{ steps.generate-token.outputs.token }}
+      diff_exists: ${{ steps.check_diff.outputs.diff_exists }}
     steps:
       - name: Generate a GitHub App install access token
         id: generate-token
@@ -33,17 +33,10 @@ jobs:
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-    
-  check_diff:
-    runs-on: ubuntu-latest
-    outputs:
-      diff_exists: ${{ steps.check_diff.outputs.diff_exists }}
-    needs: app_install
-    steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ needs.app_install.outputs.private_key }}
+          token: ${{ steps.generate-token.outputs.token }}
           submodules: recursive
       - name: Changes available
         id: check_diff
@@ -85,7 +78,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: staging
-    needs: [info, app_install]
+    needs: info
     env:
       HUGO_VERSION: 0.138.0
       HUGO_ASSET_VERSION: extended_
@@ -98,10 +91,16 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass
         run: sudo snap install dart-sass
+      - name: Generate a GitHub App install access token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ needs.app_install.outputs.private_key }}
+          token: ${{ steps.generate-token.outputs.token }}
           submodules: recursive
       - name: Build with Hugo
         env:
@@ -153,7 +152,7 @@ jobs:
   create_pr:
     runs-on: ubuntu-latest
     environment: staging
-    needs: [info, build, deploy, app_install]
+    needs: [info, build, deploy]
     permissions:
       contents: read
       pull-requests: write
@@ -166,10 +165,16 @@ jobs:
             "push") echo "ref=${{ github.ref_name }}" >> $GITHUB_OUTPUT ;;
             *) exit 1 ;;
           esac
+      - name: Generate a GitHub App install access token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ needs.app_install.outputs.private_key }}
+          token: ${{ steps.generate-token.outputs.token }}
           submodules: recursive
           ref: ${{ steps.pull_request_head.outputs.ref }}
       - name: Create PR for production deploy
