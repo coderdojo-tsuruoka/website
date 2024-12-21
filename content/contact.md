@@ -3,8 +3,8 @@ title = "お問い合わせ"
 id = "contact"
 +++
 
-# We are here to help you
+# お問い合わせについて
 
-Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.
-
-Please feel free to contact us, our customer service center is working for you 24/7.
+下記フォーマットにお問い合わせ内容をご入力いただき、送信ボタンを押して送信してください。
+ご入力していただいた個人情報は、お問い合わせの返信にお使いいたします。
+なお、返信には時間がかかる場合がございます。ご了承ください。
