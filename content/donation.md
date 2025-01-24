@@ -41,7 +41,7 @@ CoderDojo Tsuruokaのイベント運営メンバーとして、下記の方々�
 - Mentor(メンター): Ninja(参加者)をサポートする方。ニンジャと共に問題を一緒になって考えられる人であれば、IT関連の仕事をされていない方でも問題ありません。
 - Volunteer(ボランティア): イベントの運営に協力いただく方。会場準備・撤収や開催報告用の写真撮影等をお願いします。
 
-運営メンバーには**会員登録をお願いしており、入会時に[CoderDojo憲章](https://coderdojo.jp/charter)、[会員規約へ](/agreement)の同意をお願いしています。**
+運営メンバーには**会員登録をお願いしており、入会時に[CoderDojo憲章](https://coderdojo.jp/charter)、<a href="/agreement" target="_blank">会員規約</a>への同意をお願いしています。**
 詳細は、CoderDojo会員、または[Web問い合わせ](/contact)からご連絡ください。
 
 ## その他
