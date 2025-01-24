@@ -98,6 +98,12 @@ id = ""
     weight     = 60
 
 [[menu.main]]
+    name       = "サポート・寄付のお願い"
+    identifier = "menu.donation"
+    url        = "/donation"
+    weight     = 99
+
+[[menu.main]]
     name       = "お問い合わせ"
     identifier = "contact"
     url        = "/contact/"
@@ -131,8 +137,9 @@ id = ""
             hardWraps = true
             unsafe = true
     [markup.tableOfContents]
-        endLevel = 5
-        startLevel = 3
+        startLevel = 1
+        endLevel = 3
+        ordered = false
 
 
 ######## PARAMS
@@ -150,7 +157,7 @@ id = ""
     logo = "/img/logo.png"
     logo_small = "/img/logo.png"
 
-    copyright = "Copyright (c) 2024, CoderDojo Tsuruoka. All rights reserved."
+    copyright = "Copyright (c) 2025 CoderDojo Tsuruoka"
 
 
     # Social media
