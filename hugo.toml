@@ -98,6 +98,12 @@ id = ""
     weight     = 60
 
 [[menu.main]]
+    name       = "サポート・寄付のお願い"
+    identifier = "menu.donation"
+    url        = "/donation"
+    weight     = 99
+
+[[menu.main]]
     name       = "お問い合わせ"
     identifier = "contact"
     url        = "/contact/"
