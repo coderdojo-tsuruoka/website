@@ -131,8 +131,9 @@ id = ""
             hardWraps = true
             unsafe = true
     [markup.tableOfContents]
-        endLevel = 5
-        startLevel = 3
+        startLevel = 1
+        endLevel = 3
+        ordered = false
 
 
 ######## PARAMS
