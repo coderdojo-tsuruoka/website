@@ -253,6 +253,13 @@ id = ""
     slide_speed = 2000
     pagination_speed = 1000
 
+[params.nextevents]
+    # All carousel items are defined in their own files. You can find items at '/data/nextevent'.
+    enable = true
+    auto_play = false
+    slide_speed = 2000
+    pagination_speed = 1000
+
 [params.features]
     # All features are defined in their own files. You can find items at '/data/features'.
     enable = true
