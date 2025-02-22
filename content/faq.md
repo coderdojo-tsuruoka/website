@@ -4,40 +4,96 @@ description = "Frequently asked questions"
 keywords = ["FAQ","How do I","questions","what if"]
 +++
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+> 定期開催しているCoderDojoに関してよくある質問をまとめました。
 
-## 1. WHAT TO DO IF I HAVE STILL NOT RECEIVED THE ORDER?
+----
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+## 1. CoderDojoでは何を教えてくれますか？
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
+CoderDojoは塾や教室ではないので、特定のカリキュラムに従ってプログラミングを教えるといったことはしません。
+<u>ニンジャたちの自主性・自立性を重んじているので、本人がやりたいことを決めて取り組んでいただき、
+わからないことは一緒に調べたり、考えたりする姿勢でチャレンジをサポートします。</u>
 
-## 2. WHAT ARE THE POSTAL RATES?
+特に初回は何をやったらいいかわからないといったニンジャもいますが、
+メンターとの会話を通して興味がありそうな部分を一緒に考え、メンターからいくつか提案します。
+実際に取り組んでみて、次回継続して取り組むか、周りの様子を見て取り組むものを変えるなど検討いただければと思います。
 
-Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+----
 
-## 3. DO YOU SEND OVERSEAS?
+## 2. 誰でも参加できますか？
 
-Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+小学1年生から高校3年生を対象に<u>基本無料</u>で行っており、これ以外の参加資格はありません。
+なお、小学生は保護者の方の同伴をお願いしています。
 
-## 4. WHY ARE YOU MORE EXPENSIVE THAN OTHERS?
+同伴をお願いしていることもあり、未就学児の方の来場もOKです。
+未就学児の方も扱えるようなものも用意しています。
+可能な限り、継続的に取り組んでいただけるよう、パソコンの持参を推奨していますが、
+道場でお貸しできるパソコンもあります。
+（数に限りがあり、参加申し込み時に申し出いただいています。）
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+学校から貸与されているパソコンやタブレットなどでもできることがありますので、
+ご持参いただくことをお勧めしています。
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
+----
 
-## 5. ANOTHER IMPORTANT QUESTION
+## 3. どのように参加申し込みすればよいですか？
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+参加申し込みは開催案内を掲載しているconnpassで受付しています。
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
+申込にはconnpassへのユーザ登録が必要です。
+開催案内にユーザ登録を含めた申し込み方法を明記していますので、ご参照ください。
+
+ご兄弟で参加される場合は、申し込みの際に連名で記載いただく形でも問題ありません。
+(可能であればconnpassのユーザを分けていただき、それぞれ登録いただけるとありがたいです。)
+
+もし不安があれば、見学申し込みも可能ですので、ぜひお問い合わせください。
+
+----
+
+## 4. ニンジャとはなんですか？
+
+ニンジャとは、小1〜高3までの道場に参加する人を指します。
+
+CoderDojoでは、すべての道場共通での参加者を以下のような呼び方で呼んでいます。
+
+- Ninja(ニンジャ): 道場へ参加する人
+- Mentor(メンター): Ninjaをサポートする人
+- Youth Mentor(ユースメンター): CoderDojoにNinjaとして参加経験を持ち、Mentorと共に同世代のNinjaをサポートする人
+- Volunteer(ボランティア): 道場の運営に協力する人(保護者の方々も含む)
+
+----
+
+## 5. 道場はどんな進め方をしていますか？
+
+概ね以下のタイムテーブルで進めています。
+
+ 時間(目安)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | アジェンダ | 何をやる？ 
+---|---|---
+ 9:30 | 開場・受付開始 | 受付、名札作成、パソコンの準備
+ 10:00〜10:10 | 開会・自己紹介タイム | CoderDojoの説明、ニンジャたちの自己紹介 
+ 10:10〜10:20 | 今日取り組むことを決める&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | やることに迷っているニンジャはメンターに相談 
+ 10:20〜11:30 | アクティビティ | それぞれが決めた取り組むことにチャレンジ 
+ 11:30〜11:40 | 振り返りタイム | 今日やったことをシートにまとめる 
+ 11:40〜12:00 | 振り返り発表・閉会 | 各自振り返りを発表しみんなに共有。講評など 
+
+----
+
+## 6. メンターにはどんな人がいますか？
+
+CoderDojo Tsuruokaのメンターは、現役のITエンジニアとしてIT関連の仕事をされている方だけでなく、
+ニンジャと共に学ぶ気持ちで参加しているメンターもおります。
+メンターは塾や教室の「先生」とは異なり、ニンジャと共に問題を一緒になって考えられる人であれば、
+どんな人でもなっていただけます。
+CoderDojo Tsuruokaでは、メンターとして一緒に活動に参加してくれる人を募集しています。
+
+----
+
+## 7. いつ開催していますか？
+
+基本的に、毎月第４土曜日の10:00〜12:00に開催することとしていますが、
+会場やメンターの都合等で変更になる場合があります。connpassの開催案内をご確認ください。
+
 
 ---
 
-> In case you haven't found the answer for your question please feel free to contact us, our customer support will be happy to help you.
+> 上記にないご質問については、メンターへの声がけ、または各種連絡方法にてお問い合わせください。
