@@ -1,5 +1,6 @@
 weight: 1
-name: "定期的なプログラミングクラブの開催"
+name: "SCRATCH"
 icon: "fas fa-laptop-house"
 url: ""
-description: ""
+description: "子ども向けのコーディング言語で、簡単なゲームやアニメーションが作れます。
+作り方がわかる本もあるので、初心者にお勧めです。"
