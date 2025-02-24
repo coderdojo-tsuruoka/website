@@ -1,0 +1,88 @@
+[services]
+# Enable comments by entering your Disqus shortname
+#[services.disqus]
+#Shortname = "devcows"
+# Enable Google Analytics by entering your tracking code
+[services.googleAnalytics]
+#id = "UA-XXXXX-X"
+id = ""
+
+######## MENU
+[menu]
+
+# Main menu
+[[menu.main]]
+    name       = "ホーム"
+    identifier = "menu.home"
+    url        = "/"
+    weight     = 1
+
+[[menu.main]]
+    name       = "活動について"
+    identifier = "menu.coderdojo"
+    weight     = 2
+
+[[menu.main]]
+    name       = "定期開催の道場"
+    identifier = "section.regulardojo"
+    url        = ""
+    weight     = 1
+    parent     = "menu.coderdojo"
+    post       = 1
+
+[[menu.main]]
+    name       = "無料のプログラミング道場(月1回開催)"
+    url        = "/coderdojo"
+    weight     = 1
+    parent     = "section.regulardojo"
+
+[[menu.main]]
+    name       = "参加者限定ページ"
+    url        = "/coderdojo/secret"
+    weight     = 2
+    parent     = "section.regulardojo"
+
+[[menu.main]]
+    name       = "当団体について"
+    identifier = "menu.aboutus"
+    weight     = 90
+
+[[menu.main]]
+    name       = "CoderDojo Tsuruokaについて"
+    url        = "/about"
+    weight     = 1
+    parent     = "menu.aboutus"
+
+[[menu.main]]
+    name       = "会員規約"
+    url        = "/agreement"
+    weight     = 1
+    parent     = "menu.aboutus"
+
+[[menu.main]]
+    name       = "よくある質問"
+    identifier = "menu.faq"
+    url        = "/faq/"
+    weight     = 60
+
+[[menu.main]]
+    name       = "サポート・寄付のお願い"
+    identifier = "menu.donation"
+    url        = "/donation"
+    weight     = 99
+
+[[menu.main]]
+    name       = "お問い合わせ"
+    identifier = "contact"
+    url        = "/contact/"
+    weight     = 100
+
+
+## Feature部 無効化 -- 本番のみ
+[params.features]
+    enable = false
+
+## 参加者の声 無効化 -- 本番のみ
+[params.testimonials]
+    enable = false
+
