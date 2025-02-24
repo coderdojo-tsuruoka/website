@@ -16,99 +16,8 @@ paginate = 10
 # not pluralize title pages by default
 pluralizelisttitles = false
 
-[services]
-# Enable comments by entering your Disqus shortname
-#[services.disqus]
-#Shortname = "devcows"
-# Enable Google Analytics by entering your tracking code
-[services.googleAnalytics]
-#id = "UA-XXXXX-X"
-id = ""
-
-
 ######## MENU
 [menu]
-
-# Main menu
-[[menu.main]]
-    name       = "ホーム"
-    identifier = "menu.home"
-    url        = "/"
-    weight     = 1
-
-[[menu.main]]
-    name       = "活動について"
-    identifier = "menu.coderdojo"
-    weight     = 2
-
-[[menu.main]]
-    name       = "定期開催の道場"
-    identifier = "section.regulardojo"
-    url        = ""
-    weight     = 1
-    parent     = "menu.coderdojo"
-    post       = 1
-
-[[menu.main]]
-    name       = "無料のプログラミング道場(月1回開催)"
-    url        = "/coderdojo"
-    weight     = 1
-    parent     = "section.regulardojo"
-
-[[menu.main]]
-    name       = "よくある質問"
-    url        = "/coderdojo/faq"
-    weight     = 2
-    parent     = "section.regulardojo"
-
-[[menu.main]]
-    name       = "参加者限定ページ"
-    url        = "/coderdojo/secret"
-    weight     = 3
-    parent     = "section.regulardojo"
-
-
-#[[menu.main]]
-#    name       = "Blog"
-#    identifier = "menu.blog"
-#    url        = "/blog/"
-#    weight     = 4
-
-[[menu.main]]
-    name       = "当団体について"
-    identifier = "menu.aboutus"
-    weight     = 90
-
-[[menu.main]]
-    name       = "CoderDojo Tsuruokaについて"
-    url        = "/about"
-    weight     = 1
-    parent     = "menu.aboutus"
-
-[[menu.main]]
-    name       = "会員規約"
-    url        = "/agreement"
-    weight     = 1
-    parent     = "menu.aboutus"
-
-[[menu.main]]
-    name       = "よくある質問"
-    identifier = "menu.faq"
-    url        = "/faq/"
-    weight     = 60
-
-[[menu.main]]
-    name       = "サポート・寄付のお願い"
-    identifier = "menu.donation"
-    url        = "/donation"
-    weight     = 99
-
-[[menu.main]]
-    name       = "お問い合わせ"
-    identifier = "contact"
-    url        = "/contact/"
-    weight     = 100
-
 
 ######## SOCIAL LINKS on TOP BAR
 ######## ページ右上のソーシャルメディアリンク - weightが小さいものから大きいものの順に並ぶ
@@ -129,7 +38,6 @@ id = ""
     name = "Email"
     url = "mailto:tsuruoka.jp@coderdojo.com"
     pre = "<i class='fas fa-2x fa-envelope'></i>"
-
 
 [markup]
     [markup.goldmark]
@@ -235,7 +143,7 @@ id = ""
     search = false
 
 [params.carouselCustomers]
-    items = 6
+    items = 5
     auto_play = false
     slide_speed = 2000
     pagination_speed = 1000
