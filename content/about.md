@@ -12,7 +12,7 @@ description = "CoderDojo、CoderDojo Tsuruokaについての説明"
 
 2024年3月現在で、世界では100カ国・2,000の道場が、日本国内には190以上の道場が活動しています。
 
-すべての道場は[CoderDojo憲章](https://coderdojo.jp/charter)に同意し、CoderDojo Foundationに承認を受けることでCoderDojoの名前を使って活動することが認められます。
+すべての道場は[CoderDojo憲章](https://coderdojo.jp/charter)に同意し、Raspberry pi財団(旧:CoderDojo財団は統合)に承認を受けることでCoderDojoの名前を使って活動することが認められます。
 なお、どの道場も独立して運営されており、イベントの開催頻度や扱うテーマ・技術も様々となっています。
 
 ----
@@ -24,7 +24,7 @@ CoderDojo Tsuruoka(コーダー道場 鶴岡)は、地域ボランティアメ�
 (2023年7月に第1回を開催。道場参加者から料金を徴収しないことがCoderDojo憲章で定められています。)
 
 道場の運営は地域ボランティアメンバーの参加を中心に、
-CoderDojo Foundationや公式日本法人であるCoderDojo Japanのサポートや、個人・団体から助成や寄付等による支援を受け実施しています。
+Raspberry pi財団や公式日本法人であるCoderDojo Japanのサポートや、個人・団体から助成や寄付等による支援を受け実施しています。
 
 
 ----
