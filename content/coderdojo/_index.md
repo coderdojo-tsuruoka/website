@@ -63,6 +63,4 @@ https://coderdojo-tsuruoka.connpass.com/
 - CoderDojo Japan: https://coderdojo.jp
 
 ##### 世界の道場やCoderDojo本部の活動を知りたい方はこちら
-- CoderDojo Foundation: https://coderdojo.com
-
-
+- Code Club https://codeclub.org/ja/coderdojo-community
