@@ -4,8 +4,7 @@
 #Shortname = "devcows"
 # Enable Google Analytics by entering your tracking code
 [services.googleAnalytics]
-#id = "UA-XXXXX-X"
-id = ""
+id = "G-5217R699ZN"
 
 ######## MENU
 [menu]
