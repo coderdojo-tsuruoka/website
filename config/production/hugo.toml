@@ -76,13 +76,3 @@ id = ""
     identifier = "contact"
     url        = "/contact/"
     weight     = 100
-
-
-## Feature部 無効化 -- 本番のみ
-[params.features]
-    enable = false
-
-## 参加者の声 無効化 -- 本番のみ
-[params.testimonials]
-    enable = false
-
