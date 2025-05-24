@@ -150,7 +150,7 @@ pluralizelisttitles = false
 
 [params.carouselTestimonials]
     items = 4
-    auto_play = false
+    auto_play = true
     slide_speed = 2000
     pagination_speed = 1000
 

@@ -82,7 +82,3 @@ id = ""
 [params.features]
     enable = false
 
-## 参加者の声 無効化 -- 本番のみ
-[params.testimonials]
-    enable = false
-
