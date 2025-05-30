@@ -1,6 +1,6 @@
-[submodule "themes/hugo-universal-theme"]
-	path = themes/hugo-universal-theme
-	url = https://github.com/coderdojo-tsuruoka/hugo-universal-theme
 [submodule "content/coderdojo/secret"]
 	path = content/coderdojo/secret
 	url = https://github.com/coderdojo-tsuruoka/website-coderdojo-secret.git
+[submodule "themes/hugo-universal-theme"]
+	path = themes/hugo-universal-theme
+	url = https://github.com/coderdojo-tsuruoka/hugo-universal-theme.git
