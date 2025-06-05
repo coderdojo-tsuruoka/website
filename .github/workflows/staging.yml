@@ -81,7 +81,7 @@ jobs:
     environment: staging
     needs: info
     env:
-      HUGO_VERSION: 0.142.0
+      HUGO_VERSION: 0.147.6
       HUGO_ASSET_VERSION: extended_
     permissions:
       contents: write
