@@ -1,11 +1,10 @@
 [services]
-# Enable comments by entering your Disqus shortname
-#[services.disqus]
-#Shortname = "devcows"
-# Enable Google Analytics by entering your tracking code
-[services.googleAnalytics]
-#id = "UA-XXXXX-X"
-id = ""
+    # Enable comments by entering your Disqus shortname
+    #[services.disqus]
+        #shortname = "devcows"
+    # Enable Google Analytics by entering your tracking code
+    [services.googleAnalytics]
+        id = ""
 
 ######## MENU
 [menu]
