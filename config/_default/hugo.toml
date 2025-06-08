@@ -13,6 +13,9 @@ summaryLength = 70
 # not pluralize title pages by default
 pluralizelisttitles = false
 
+# robots.txt generate
+enableRobotsTXT = true
+
 # Define the number of posts per page
 [pagination]
     pagerSize = 10
@@ -54,7 +57,7 @@ pluralizelisttitles = false
 ######## PARAMS
 [params]
     author = "CoderDojo Tsuruoka"
-    defaultKeywords = ["CoderDojo", "CoderDojo Tsuruoka", "コーダー道場", "コーダー道場 鶴岡", "鶴岡", "庄内", "山形"]
+    defaultKeywords = ["CoderDojo Tsuruoka", "コーダー道場 鶴岡", "CoderDojo", "コーダー道場", "鶴岡", "プログラミング"]
     defaultDescription = "CoderDojo Tsuruokaは、山形県鶴岡市を中心に地域ボランティアメンバーによって運営する非営利のプログラミングクラブです。月1回程度、無償でプログラミング道場を提供しています。"
 #    viewMorePostLink = "/blog/"
 #    mainSections = ["blog"]
