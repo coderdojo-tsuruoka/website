@@ -1,6 +1,7 @@
 +++
 title = "お問い合わせ"
 id = "contact"
+type = "page"
 +++
 
 # お問い合わせについて
