@@ -17,9 +17,15 @@
     weight     = 1
 
 [[menu.main]]
+    name       = "お知らせ"
+    identifier = "menu.blog"
+    url        = "/blog/"
+    weight     = 2
+
+[[menu.main]]
     name       = "活動について"
     identifier = "menu.coderdojo"
-    weight     = 2
+    weight     = 20
 
 [[menu.main]]
     name       = "定期開催の道場"
@@ -40,13 +46,6 @@
     url        = "/coderdojo/secret"
     weight     = 2
     parent     = "section.regulardojo"
-
-
-#[[menu.main]]
-#    name       = "Blog"
-#    identifier = "menu.blog"
-#    url        = "/blog/"
-#    weight     = 4
 
 [[menu.main]]
     name       = "当団体について"
@@ -82,3 +81,10 @@
     identifier = "contact"
     url        = "/contact/"
     weight     = 100
+
+[params.recent_posts]
+    enable = false
+
+[params.footer.recent_posts]
+    enable = false
+
