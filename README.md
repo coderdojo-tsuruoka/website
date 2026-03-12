@@ -19,10 +19,10 @@ CoderDojo Tsuruokaの公開用Webページ。
 
 | Technology | Version | Note |
 | ---------- | ------- | ---- |
-| [Hugo] | 0.138.0 | [Go]を利用した静的サイトジェネレーター |
-| [Go] | 1.20 or later | Hugoのバックエンド / Dependency: Hugo |
+| [Hugo] | 0.151.2 | [Go]を利用した静的サイトジェネレーター |
+| [Go] | 1.25.3 or later | Hugoのバックエンド / Dependency: Hugo |
 | Git | - | ページリソースの共有ツール / Dependency: Hugo |
-| Dart Sass | - | Dartで書かれたSassコンパイルツール / Dependency: Hugo |
+| Dart Sass | 1.93.2 | Dartで書かれたSassコンパイルツール / Dependency: Hugo |
 | [hugo-universal-theme] | 1.4.1 | Hugoで利用しているテーマ |
 | [DojoPaaS] | - | Webサイト公開クラウド(Ubuntu) |
 | nginx | - | Webサイト公開Webサーバ |
