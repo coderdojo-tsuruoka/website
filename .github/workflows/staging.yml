@@ -59,7 +59,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       TZ: "Asia/Tokyo"
-    if: needs.check_diff.outputs.diff_exists == 'true'
+    if: ${{ needs.check_diff.outputs.diff_exists == 'true' }}
     steps:
       - name: Set version_id
         id: vid
