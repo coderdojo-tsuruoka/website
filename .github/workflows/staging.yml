@@ -59,7 +59,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       TZ: "Asia/Tokyo"
-    if: ${{ needs.check_diff.outputs.diff_exists}} == 'true'
+    if: ${{ needs.check_diff.outputs.diff_exists  == 'true'}}
     steps:
       - name: Set version_id
         id: vid
@@ -110,8 +110,7 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           hugo \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --minify 
       - name: Echo version id and rename public to version_id
         run: |
           echo ${{ needs.info.outputs.version_id }}
