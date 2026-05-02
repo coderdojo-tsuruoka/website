@@ -59,7 +59,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       TZ: "Asia/Tokyo"
-    if: ${{ needs.check_diff.outputs.diff_exists  == 'true'}}
+    if: needs.check_diff.outputs.diff_exists == 'true'
     steps:
       - name: Set version_id
         id: vid
@@ -91,7 +91,7 @@ jobs:
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_ASSET_VERSION}${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass
-        run: sudo snap install dart-sass
+        run: sudo brew install sass/sass/sass
       - name: Generate a GitHub App install access token
         id: generate-token
         uses: actions/create-github-app-token@v1
