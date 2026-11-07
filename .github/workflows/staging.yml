@@ -180,7 +180,7 @@ jobs:
           ref: ${{ steps.pull_request_head.outputs.ref }}
       - name: Create PR for production deploy
         env:
-          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          APP_TOKEN: ${{ steps.generate-token.outputs.token }}
           PR_TITLE: "[本番リリース] ${{ needs.info.outputs.version_id }}"
           PR_BODY: "本番環境へのリリース - ${{ needs.info.outputs.version_id }}"
           PR_LABEL: "auto generated"
