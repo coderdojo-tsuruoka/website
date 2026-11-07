@@ -81,13 +81,17 @@ jobs:
           submodules: recursive
       - name: Create releaase tag
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           STAGING_TAG: staging/${{ needs.info.outputs.version_id }}
           RELEASE_TAG: release/${{ needs.info.outputs.version_id }}
         run: |
           git fetch --prune --unshallow --tags
           git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git tag ${{ env.RELEASE_TAG }} ${{ env.STAGING_TAG }}
           git push origin ${{ env.RELEASE_TAG }}
+          gh release create "${{ env.RELEASE_TAG }}" \
+            --title "${{ needs.info.outputs.version_id }}" \
+            --generate-notes
 
