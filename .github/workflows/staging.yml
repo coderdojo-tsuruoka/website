@@ -22,7 +22,7 @@ defaults:
     shell: bash
 
 jobs:
-check_diff:
+  check_diff:
     runs-on: ubuntu-latest
     outputs:
       diff_exists: ${{ steps.check_diff.outputs.diff_exists }}
