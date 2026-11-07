@@ -180,18 +180,19 @@ jobs:
           ref: ${{ steps.pull_request_head.outputs.ref }}
       - name: Create PR for production deploy
         env:
-          APP_TOKEN: ${{ steps.generate-token.outputs.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_TITLE: "[本番リリース] ${{ needs.info.outputs.version_id }}"
           PR_BODY: "本番環境へのリリース - ${{ needs.info.outputs.version_id }}"
           PR_LABEL: "auto generated"
         run: |
           git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          GH_TOKEN="$APP_TOKEN" gh pr create \
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          gh pr create \
                       -B main \
                       -H staging \
                       -t "${{ env.PR_TITLE }}" \
                       -b "${{ env.PR_BODY }}" \
                       -l "${{ env.PR_LABEL }}" \
                       -a "yosi-q" \
-                      --reviewer "yosi-q"
+                      --reviewer coderdojo-tsuruoka/final-reviewers
